@@ -1,0 +1,9 @@
+<idea-plugin version="2">
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>com.ultrahob.configuration.handlers.JUnitSupport</implementation-class>
+        </component>
+    </application-components>
+
+</idea-plugin>
