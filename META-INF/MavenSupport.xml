@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <application-components>
         <component>
-            <implementation-class>com.ultrahob.configuration.handlers.JUnitSupport</implementation-class>
+            <implementation-class>com.ultrahob.configuration.handlers.MavenSupport</implementation-class>
         </component>
     </application-components>
 </idea-plugin>
