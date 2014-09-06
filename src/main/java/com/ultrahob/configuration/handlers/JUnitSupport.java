@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Victor Rosenberg, 10.05.2014 18:30
  */
 @SuppressWarnings("ComponentNotRegistered")
-public class JUnitSupport extends BaseConfigurationHelper {
+public class JUnitSupport extends com.ultrahob.configuration.handlers.BaseConfigurationHelper {
 
     @NotNull
     public String getComponentName() {

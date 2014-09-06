@@ -29,15 +29,13 @@ public class JumpToConfigurationAction extends AnAction {
         if (selectedConfiguration != null) {
             RunConfiguration configuration = selectedConfiguration.getConfiguration();
 
-            boolean handled = ConfigurationManager.getInstance().tryHandling(configuration, project);
+            if (ConfigurationManager.getInstance().tryHandling(configuration, project)) {
+                return;
+            }
 
             if (configuration instanceof SingleClassConfiguration) {
                 PsiClass mainClass = ((SingleClassConfiguration) configuration).getMainClass();
                 fileEditorManager.openFile(mainClass.getContainingFile().getVirtualFile(), true);
-
-            } else if (configuration instanceof JUnitConfiguration) {
-                ((JUnitConfiguration) configuration).getTestObject();
-                //((JUnitConfiguration) configuration).getRunClass()
             }
         }
 

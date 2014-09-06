@@ -17,7 +17,7 @@ import java.io.File;
 public class MavenSupport extends BaseConfigurationHelper {
     @Override
     public boolean canHandle(RunConfiguration configuration, Project project) {
-        if (!(configuration instanceof MavenRunConfiguration)) {
+        if (!(configuration instanceof org.jetbrains.idea.maven.execution.MavenRunConfiguration)) {
             return false;
         } else {
 //            VirtualFile file = LocalFileFinder.findFile(new File(workingDirFile, "pom.xml").getPath());
