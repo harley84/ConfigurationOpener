@@ -1,33 +1,32 @@
 <idea-plugin version="2">
-    <id>com.yourcompany.unique.plugin.id</id>
-    <name>Plugin display name here</name>
+    <id>com.ultrahob.configuration.plugin</id>
+    <name>Configuration Opener</name>
     <version>1.0</version>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://github.com/harley84/ConfigurationOpener">Victor Rosenberg</vendor>
 
     <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
+        Allows fast navigation to the source file most relevant to current Run/Debug configuration.
+        Default mapping is Ctrl Shift K.
         ]]></description>
 
     <change-notes><![CDATA[
-        Add change notes here.<br>
-        <em>most HTML tags may be used</em>
+        1.0 - First release. Implementing support for navigation to Application, JUnit and Maven configurations.
         ]]>
-  </change-notes>
+    </change-notes>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="129"/>
+    <idea-version since-build="129" until-build="129.9999"/>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
          on how to target different products -->
-    <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
-    -->
+
     <depends optional="true" config-file="JUnitSupport.xml">JUnit</depends>
     <depends optional="true" config-file="MavenSupport.xml">org.jetbrains.idea.maven</depends>
 
 
     <extensions defaultExtensionNs="com.intellij">
+        <!--<selectInTarget implementation="com.ultrahob.configuration.SelectInTargetImpl"/>-->
         <!-- Add your extensions here -->
     </extensions>
 
@@ -42,7 +41,8 @@
         <!-- Add your actions here -->
         <action id="JumpToConfiguration" class="com.ultrahob.configuration.JumpToConfigurationAction"
                 text="Jump To Current Configuration">
-            <add-to-group group-id="RunMenu" anchor="first"/>
+            <add-to-group group-id="GoToMenu" anchor="after" relative-to-action="GotoLine"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift K"/>
         </action>
     </actions>
 

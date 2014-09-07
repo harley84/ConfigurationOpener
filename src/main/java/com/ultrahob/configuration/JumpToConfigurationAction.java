@@ -20,6 +20,8 @@ import com.intellij.psi.PsiClass;
  * @author Victor Rosenberg, 10.05.2014 13:35
  */
 public class JumpToConfigurationAction extends AnAction {
+
+    @Override
     public void actionPerformed(AnActionEvent e) {
 
         Project project = e.getProject();
